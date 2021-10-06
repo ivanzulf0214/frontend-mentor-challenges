@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap');
+    
+    * {
+      font-family: 'Red Hat Display', sans-serif;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    html body {
+      background-image: url("images/pattern-background-desktop.svg");
+      height: 100%; 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .card {
+      width: 30%;
+      margin: 20px auto;
+      padding-bottom: 20px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 3px 10px #888;
+    }
+
+    .hero-img {
+      width: 100%; 
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .card-header {
+      width: 80%;
+      margin: 20px auto 0 auto;
+      text-align: center;
+    }
+
+    .card-header .card-desc {
+      font-size: 16px;
+      color: #777;
+    }
+  
+    .card-header .card-title {
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .plan-container {
+      width: 80%;
+      margin: 0px auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: hsl(225, 100%, 98%);
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+
+    .plan-container p {
+      margin-left: -90px;
+    }
+
+    .plan-container .plan-title {
+      font-weight: bold;
+    }
+
+    .plan-container .plan-price {
+      color: #777;
+    }
+
+    .plan-container .change-btn {
+      color: hsl(245, 75%, 52%);
+      font-weight: bold;
+    }
+
+    .card-footer {
+      width: 85%;
+      margin: 0px auto 20px auto;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .card-footer a {
+      padding: 10px;
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .card-footer .proceed-btn {
+      background: hsl(245, 75%, 52%);
+      color: white;
+      margin-bottom: 10px;
+      box-shadow: 0 3px 10px #888;
+      border-radius: 10px;
+    }
+
+    .card-footer .cancel-btn {
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .card {
+        width: 80%;
+      }
+
+      .plan-container p {
+        margin-left: -250px;
+      }
+    }
+
+    @media screen and (max-width: 426px) {
+      .card {
+        width: 80%;
+      }
+
+      .plan-container p {
+        margin-left: -50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="images/illustration-hero.svg" class="hero-img">
+    
+    <div class="card-header">
+      <p class="card-title">Order Summary</p>
+      <p class="card-desc">
+        You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
+      </p>
+    </div>
+
+    <div class="plan-container">
+      <img src="images/icon-music.svg" alt="Icon">
+      <p>
+        <span class="plan-title">Annual Plan</span><br>
+        <span class="plan-price">$59.99/year</span>
+      </p>
+      <a href="#" class="change-btn">Change</a>
+    </div>
+
+    <div class="card-footer">
+      <a href="#" class="proceed-btn">Proceed to Payment</a>
+      <a href="#" class="cancel-btn">Cancel Order</a> 
+    </div>
+  </div>
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Muhamad Ivanda Zulfikar</a>.
+  </div>
+</body>
+</html>

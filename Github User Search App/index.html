@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'
+        type='text/css'>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+
+    <title>Github User Search App</title>
+
+    <style>
+        html body {
+            background-color: hsl(234, 56%, 20%);
+            color: #CCC;
+            font-family: 'Consolas';
+        }
+
+        .main-section {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .input-group * {
+            border-radius: 10px;
+        }
+
+        .card-section {
+            background-color: hsl(234, 16%, 28%);
+            border-radius: 15px;
+        }
+
+        .not-found {
+            display: none;
+        }
+
+        .avatar-img {
+            border-radius: 50%;
+        }
+
+        .header-text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .account-name {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .username-text {
+            font-size: 16px;
+            margin-top: -20px;
+        }
+
+        .join-date {
+            font-size: 14px;
+        }
+
+        .status-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: hsl(234, 56%, 20%);
+            padding-top: 10px;
+            border-radius: 10px;
+        }
+
+        .stat-label {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .stat-count {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="main-section">
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <h3>Github User Finder</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="searchForm" method="POST">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                            </div>
+                            <input type="text" class="form-control" id="username" placeholder="Username"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card card-section px-3">
+                        <div class="card-body">
+                            <div class="row not-found">
+                                <div class="col-lg-12 text-center">
+                                    <h3>User not found</h3>
+                                </div>
+                            </div>
+                            <div class="row user-found">
+                                <div class="col-lg-3">
+                                    <img src="https://avatars.githubusercontent.com/u/47600056?v=4" alt="Avatar"
+                                        class="img img-fluid avatar-img">
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="header-text">
+                                        <p class="account-name">Account Name</p>
+                                        <p class="join-date">Joined 20 Sep 2021</p>
+                                    </div>
+                                    <p class="username-text">@username</p>
+                                    <p class="bio-text">This profile has no bio.</p>
+                                    <div class="row status-container mx-0">
+                                        <div class="col-lg-4">
+                                            <p class="stat-label">Repos</p>
+                                            <p class="stat-count repos">10</p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <p class="stat-label">Followers</p>
+                                            <p class="stat-count followers">5000</p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <p class="stat-label">Following</p>
+                                            <p class="stat-count following">57</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-6 mb-2">
+                                            <i class="fa fa-map-marker"></i> <span class="location">Jakarta</span>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <i class="fa fa-twitter"></i> <span class="twitter">Not Available</span>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <i class="fa fa-link"></i> <span class="blog">https://github.blog</span>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <i class="fa fa-building-o"></i> <span class="company">Creonsoft</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#searchForm').on('submit', function (e) {
+                e.preventDefault();
+
+                let username = $('#username').val();
+
+                $.ajax({
+                    method: 'GET',
+                    url: 'https://api.github.com/users/' + username,
+                    dataType: 'json',
+                    error: function (xhr, response) {
+                        if (xhr.status == 404) {
+                            $('.not-found').show();
+                            $('.user-found').hide();
+                        }
+                    },
+                    success: function (res) {
+                        $('.avatar-img').attr('src', res.avatar_url);
+                        $('.account-name').text(res.name);
+                        $('.join-date').text('Joined ' + formatDate(res.created_at));
+                        $('.username-text').text('@' + res.login);
+                        $('.bio-text').text((res.bio == null ? 'This profile has no bio.' : res.bio));
+                        $('.repos').text(res.public_repos);
+                        $('.followers').text(res.followers);
+                        $('.following').text(res.following);
+                        $('.location').text((res.location == null ? 'Not Available' : res.location));
+                        $('.blog').text((res.blog == '' ? 'Not Available' : res.blog));
+                        $('.company').text((res.company == null ? 'Not Available' : res.company));
+                        $('.twitter').text((res.twitter_username == null ? 'Not Available' : res.twitter_username));
+
+                        $('.not-found').hide();
+                        $('.user-found').show();
+                    }
+                });
+            });
+        });
+
+        function formatDate(dateString) {
+            let date = dateString.substring(0, 10);
+            let dateArr = date.split("-");
+
+            let monthString = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+            let year = dateArr[0];
+            let day = dateArr[2];
+            let month = monthString[parseInt(dateArr[1]) - 1];
+
+            return day + ' ' + month + ' ' + year;
+        }
+    </script>
+</body>
+
+</html>
