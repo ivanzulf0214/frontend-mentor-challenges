@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'
+      type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | [Social Media Dashboard]</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-title">
+        <div class="page-title">Social Media Dashboard</div>
+        <div class="page-subtitle">Total Followers: 23,004</div>
+      </div>
+      <div class="header-switch">
+        <div class="switch-container">
+          Dark Mode
+          <label class="switch">
+            <input type="checkbox" class="toggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="status-container">
+        <div class="status-box facebook">
+          <p class="username"><i class="fa fa-facebook-square fa-2x icon-facebook"></i> @nathanf</p>
+          <p class="counter">1987</p>
+          <p class="label">followers</p>
+          <p class="change increase">12 Today</p>
+        </div>
+        <div class="status-box twitter">
+          <p class="username"><i class="fa fa-twitter fa-2x icon-twitter"></i> @nathanf</p>
+          <p class="counter">1044</p>
+          <p class="label">followers</p>
+          <p class="change increase">99 Today</p>
+        </div>
+        <div class="status-box instagram">
+          <p class="username"><i class="fa fa-instagram fa-2x icon-instagram"></i> @realnathanf</p>
+          <p class="counter">11k</p>
+          <p class="label">followers</p>
+          <p class="change increase">1099 Today</p>
+        </div>
+        <div class="status-box youtube">
+          <p class="username"><i class="fa fa-youtube-play fa-2x icon-youtube"></i> Nathan F.</p>
+          <p class="counter">8239</p>
+          <p class="label">followers</p>
+          <p class="change decrease">144 Today</p>
+        </div>
+      </div>
+      <div class="overview-container">
+        <p class="overview-title">Overview - Today</p>
+        <div class="row">
+          <div class="overview-item">
+            <div class="overview-label">
+              <i class="fa fa-facebook-square fa-2x icon-facebook"></i>
+              Page Views
+            </div>
+            <div class="overview-counter">
+              <p class="overview-number">87</p>
+              <p class="overview-change increase">3%</p>
+            </div>
+          </div>
+          <div class="overview-item">
+            <div class="overview-label">
+              <i class="fa fa-facebook-square fa-2x icon-facebook"></i>
+              Likes
+            </div>
+            <div class="overview-counter">
+              <p class="overview-number">52</p>
+              <p class="overview-change decrease">2%</p>
+            </div>
+          </div>
+          <div class="overview-item">
+            <div class="overview-label">
+              <i class="fa fa-instagram fa-2x icon-instagram"></i>
+              Likes
+            </div>
+            <div class="overview-counter">
+              <p class="overview-number">5462</p>
+              <p class="overview-change increase">2257%</p>
+            </div>
+          </div>
+          <div class="overview-item">
+            <div class="overview-label">
+              <i class="fa fa-instagram fa-2x icon-instagram"></i>
+              Profile Views
+            </div>
+            <div class="overview-counter">
+              <p class="overview-number">52k</p>
+              <p class="overview-change increase">1375%</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="overview-item">
+            <div class="overview-label">
+              <i class="fa fa-twitter fa-2x icon-twitter"></i>
+              Retweets
+            </div>
+            <div class="overview-counter">
+              <p class="overview-number">117</p>
+              <p class="overview-change increase">303%</p>
+            </div>
+          </div>
+          <div class="overview-item">
+            <div class="overview-label">
+              <i class="fa fa-twitter fa-2x icon-twitter"></i>
+              Likes
+            </div>
+            <div class="overview-counter">
+              <p class="overview-number">507</p>
+              <p class="overview-change increase">553%</p>
+            </div>
+          </div>
+          <div class="overview-item">
+            <div class="overview-label">
+              <i class="fa fa-youtube-play fa-2x icon-youtube"></i>
+              Likes
+            </div>
+            <div class="overview-counter">
+              <p class="overview-number">107</p>
+              <p class="overview-change decrease">19%</p>
+            </div>
+          </div>
+          <div class="overview-item">
+            <div class="overview-label">
+              <i class="fa fa-youtube-play fa-2x icon-youtube"></i>
+              Total Views
+            </div>
+            <div class="overview-counter">
+              <p class="overview-number">1407</p>
+              <p class="overview-change decrease">12%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Muhamad Ivanda Zulfikar</a>.
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      var theme = localStorage.getItem("theme");
+
+      if (theme != null && theme == 'dark') {
+          $('body').addClass('dark');
+          $('.toggle').attr('checked', true);
+      }
+
+      $('.toggle').on('change', function() {
+        let checked = this.checked;
+
+        if (checked) {
+          $('body').addClass('dark');
+          localStorage.setItem("theme", "dark");
+        } else {
+          $('body').removeClass('dark');
+          localStorage.removeItem("theme");
+        }
+      });
+    })
+  </script>
+</body>
+</html>
