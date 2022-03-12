@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+:root {
+    --white: #fff;
+    --cyan: hsl(178, 100%, 50%);
+    --soft-blue: hsl(215, 51%, 70%);
+}
+
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+html body {
+    background: hsl(217, 54%, 11%);
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    background: hsl(216, 50%, 16%);
+    width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+    .card .thumbnail-wrapper {
+        position: relative;
+    }
+
+        .card .thumbnail-wrapper:hover {
+            cursor: pointer;
+        }  
+
+        .card .thumbnail-wrapper .nft-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+            .card .thumbnail-wrapper .nft-image:hover {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+        .card .thumbnail-wrapper .view-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .card .thumbnail-wrapper:hover .view-image{
+            display: block;
+        }
+
+        .card .thumbnail-wrapper .overlay{
+            background: rgba(0, 255, 247, .5);
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 5px);
+            border-radius: 10px;
+            display: none;
+        }
+
+            .card .thumbnail-wrapper:hover .overlay{
+                display: block;
+            } 
+
+    .card .title {
+        color: var(--white);
+        font-size: 24px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+        .card .title:hover {
+            color: var(--cyan);
+            cursor: pointer;
+        }
+
+    .card .description {
+        color: var(--soft-blue);
+        padding: 10px 0;
+    }
+
+    .card .pricing {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-bottom: 1px solid #2f415b;
+    }
+
+        .card > .pricing > div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card .pricing .price {
+            color: var(--cyan);
+        }
+
+        .card .pricing .time {
+            color: var(--soft-blue);
+        }
+
+    .card .footer {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0 0 0;
+    }
+
+    .card .footer .image-wrapper {
+        background-color: var(--white);
+        width: 30px;
+        height: 30px;
+        padding: 1px;
+        border-radius: 50%;
+    }
+
+        .card .footer .image-wrapper .author-image {
+            width: 100%;
+            height: auto;
+        }
+
+    .card .footer .author-info {
+        color: var(--soft-blue);
+    }
+
+    .card .footer .author-name {
+        color: var(--white);
+    }
+
+        .card .footer .author-name:hover {
+            color: var(--cyan);
+            cursor: pointer;
+        }
+
+.attribution {
+    font-size: 14px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .attribution a {
+    color: var(--cyan);
+  }

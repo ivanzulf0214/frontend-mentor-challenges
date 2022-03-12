@@ -8,3 +8,4 @@
 - Single Price Grid
 - Stats Preview Card
 - Social Media Dashboard (Light & Dark Mode)
+- NFT Preview Card
