@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <img src="./images/logo.svg" alt="Logo">
+      <div class="score-container">
+        <p class="label">score</p>
+        <p class="score" data-score="0">0</p>
+      </div>
+    </div>
+    <div class="game-area">
+      <div class="step-one">
+        <div class="game-controller">
+          <div class="control-button-outer paper" data-control="paper">
+            <div class="control-button-inner">
+              <img src="./images/icon-paper.svg" alt="">
+            </div>
+          </div>
+          <div class="control-button-outer scissors" data-control="scissors">
+            <div class="control-button-inner">
+              <img src="./images/icon-scissors.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="game-controller">
+          <div class="control-button-outer rock" data-control="rock">
+            <div class="control-button-inner">
+              <img src="./images/icon-rock.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-two" style="display: none;">
+        <div class="pick-container">
+          <div class="my-pick pick-item">
+            <p class="pick-label">you picked</p>
+          </div>
+          <div class="result pick-item">
+            <p class="result-text"></p>
+            <button class="play-again-btn">Play again</button>
+          </div>
+          <div class="comp-pick pick-item">
+            <p class="pick-label">the house picked</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

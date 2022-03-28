@@ -1,0 +1,59 @@
+html body {
+    margin: 0;
+    padding: 0;
+    background: url('../assets/home/background-home-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    margin-top: 250px;
+    padding: 0 150px;
+}
+
+.content .left-section h1, 
+.content .left-section p {
+    margin: 0;
+    color: #CCC;
+    font-weight: 100;
+}
+
+.content .left-section {
+    width: 40%;
+}
+
+.content .left-section .content-title {
+    font-size: 36px;
+}
+
+.content .right-section {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .right-section .explore-button {
+    background-color: #EEE;
+    color: #444;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 40px;
+    box-shadow: 0 0 50px #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s ease-in-out;
+}
+
+.content .right-section .explore-button:hover {
+    background-color: #CCC;
+    transform: scale(1.1);
+}

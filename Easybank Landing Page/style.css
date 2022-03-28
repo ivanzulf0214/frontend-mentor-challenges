@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+* {
+    font-family: 'Public Sans', sans-serif;
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    max-width: 100%;
+    padding: 10px 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.navbar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navbar ul li {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.invite-btn {
+    text-decoration: none;
+    background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.header {
+    padding: 50px 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(0, 0%, 98%);
+}
+
+.about {
+    padding: 50px 150px;
+    background-color: hsl(220, 16%, 96%);
+}
+
+.about .product-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 100px;
+}
+
+.product-title {
+    font-weight: 700;
+    font-size: 3vh;
+}
+
+.product-description {
+    text-align: justify;
+    color: #aaa;
+    margin-top: 30px;
+}
+
+.latest-article {
+    padding: 50px 150px;
+    background-color: hsl(0, 0%, 98%);
+}
+
+.article-container {
+    display: flex;
+    gap: 30px;
+}
+
+.article-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article {
+    width: 25%;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.article p {
+    padding: 0 10px 0 10px;
+}
+
+.footer {
+    padding: 50px 150px;
+    background-color: hsl(233, 26%, 24%);
+    display: flex;
+}
+
+.footer .contacts {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer .contacts .logo {
+    filter: invert(0);
+}
+
+.footer .footer-links {
+    flex-grow: 1;
+}
+
+.footer .copyright {
+    flex-grow: 8;
+    text-align: right;
+}

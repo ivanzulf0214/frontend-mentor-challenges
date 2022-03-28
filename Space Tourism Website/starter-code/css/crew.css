@@ -1,0 +1,77 @@
+html body {
+    margin: 0;
+    padding: 0;
+    background: url('../assets/crew/background-crew-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    color: #FFF;
+    padding: 0 200px;
+}
+
+.content-title {
+    display: flex;
+    gap: 30px;
+    color: #BBB;
+    padding: 50px 200px;
+    font-weight: 100;
+}
+
+.content .left-section {
+    width: 50%;
+    margin-top: 50px;
+}
+
+.content .left-section .crew-title {
+    margin: 0;
+    font-size: 27px;
+    font-weight: 100;
+}
+
+.content .left-section .crew-name {
+    margin: 0;
+    font-size: 54px;
+    font-weight: 100;
+}
+
+.content .left-section p {
+    font-size: 18px;
+    line-height: 2;
+}
+
+.content .left-section .crew-carousel {
+    display: flex;
+    gap: 30px;
+    padding-top: 30px;
+}
+
+.content .left-section .crew-carousel a {
+    width: 20px;
+    height: 20px;
+    background-color: #555;
+    border-radius: 50%;
+}
+
+.content .left-section .crew-carousel a.active {
+    background-color: #fff;
+}
+
+.content .right-section {
+    text-align: left;
+}
+
+.content .right-section img[data-job="pilot"] {
+    margin-top: -37px;
+}
+
+.content .right-section img[data-job="commander"] {
+    margin-top: -93px;
+}
+
+.content .right-section img[data-job="specialist"] {
+    margin-top: -35px;
+}

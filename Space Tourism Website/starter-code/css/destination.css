@@ -1,0 +1,65 @@
+html body {
+    margin: 0;
+    padding: 0;
+    background: url('../assets/destination/background-destination-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    color: #FFF;
+    padding: 0 150px;
+}
+
+.content-title {
+    display: flex;
+    gap: 30px;
+    color: #BBB;
+    padding: 50px 200px;
+    font-weight: 100;
+}
+
+.content-title span {
+    color: #555;
+}
+
+.content .left-section {
+    margin-right: 200px;
+}
+
+.content .right-section {
+    width: 30%;
+}
+
+.content .right-section .destination-menu {
+    display: flex;
+    gap: 40px;
+}
+
+.content .right-section .destination-menu a {
+    text-decoration: none;
+    color: #DDD;
+    text-transform: uppercase;
+}
+
+.content .right-section .destination-menu a.active {
+    border-bottom: 3px solid #DDD;
+}
+
+.content .right-section h1, 
+.content .right-section p {
+    margin: 0;
+    color: #DDD;
+    font-weight: 100;
+}
+
+.content .right-section .destination-info {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid #333;
+    text-transform: uppercase;
+}

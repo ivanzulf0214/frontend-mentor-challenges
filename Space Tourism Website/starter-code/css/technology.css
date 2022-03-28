@@ -1,0 +1,101 @@
+html body {
+    margin: 0;
+    padding: 0;
+    background: url('../assets/technology/background-technology-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFF;
+    max-height: 527px;
+}
+
+.content-title {
+    display: flex;
+    gap: 30px;
+    color: #BBB;
+    padding: 50px 200px;
+    font-weight: 100;
+}
+
+.content .left-section {
+    width: 50%;
+    margin: 0 200px;
+    display: flex;
+    gap: 30px;
+}
+
+.content .left-section .tech-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.content .left-section .tech-carousel a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 75px;
+    height: 75px;
+    background-color: #000;
+    border: 1px solid #BBB;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 32px;
+}
+
+.content .left-section .tech-carousel a:hover,
+.content .left-section .tech-carousel a.active {
+    background-color: #DDD;
+    color: #000;
+}
+
+.content .left-section .tech-info {
+    margin-left: 80px;
+    color: #CCC;
+}
+
+.content .left-section .tech-info span {
+    letter-spacing: 8px;
+    font-weight: 100;
+}
+
+.content .left-section .tech-info .tech-name {
+    font-size: 56px;
+    letter-spacing: 8px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.content .left-section .tech-info p {
+    width: 80%;
+    font-size: 18px;
+    font-weight: 100;
+    margin: 0;
+    line-height: 2;
+}
+
+.content .right-section {
+    width: 515px;
+    height: 527px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.content .right-section[data-tech="launch-vehicle"] {
+    background: url('../assets/technology/image-launch-vehicle-portrait.jpg');
+}
+
+.content .right-section[data-tech="spaceport"] {
+    background: url('../assets/technology/image-spaceport-portrait.jpg');
+}
+
+.content .right-section[data-tech="space-capsule"] {
+    background: url('../assets/technology/image-space-capsule-portrait.jpg');
+}

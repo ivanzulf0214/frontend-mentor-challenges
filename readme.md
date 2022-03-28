@@ -9,3 +9,8 @@
 - Stats Preview Card
 - Social Media Dashboard (Light & Dark Mode)
 - NFT Preview Card
+- Crowdfunding Product Page
+- Easybank Landing Page
+- Rock Paper Scissors
+- Static Job Listing
+- Space Tourism Website

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+* {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+html body {
+    padding: 0;
+    margin: 0;
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    background-attachment: fixed;
+}
+
+.container {
+    width: 60%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    border: 3px solid hsl(217, 16%, 45%);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .score-container {
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    padding: 10px;
+}
+
+.header .score-container p {
+    margin: 0;
+    padding: 0;
+}
+
+.header .score-container .label {
+    color: hsl(229, 64%, 46%);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.header .score-container .score {
+    color: hsl(229, 25%, 31%);
+    font-size: 10vh;
+}
+
+.game-area {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-area .game-controller {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.game-area .game-controller .control-button-outer {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 10px #000;
+}
+
+.paper {
+    background-color: hsl(230, 89%, 62%);
+}
+
+.scissors {
+    background-color: hsl(39, 89%, 49%);
+}
+
+.rock {
+    background-color: hsl(349, 71%, 52%);
+}
+
+.game-controller .control-button-inner {
+    background: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    height: 125px;
+    width: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-controller img {
+    width: 75px;
+    height: auto;
+}
+
+.step-two .pick-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: center;
+}
+
+.step-two .pick-container .pick-item {
+    width: 33.33%;
+}
+
+.step-two .pick-container .pick-label {
+    font-weight: 700;
+    font-size: 5vh;
+    color: hsl(0, 100%, 100%);
+    text-transform: uppercase;
+}
+
+.step-two .result {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-two .result .result-text {
+    font-size: 8vh;
+    font-weight: 700;
+    color: hsl(0, 100%, 100%);
+    text-transform: uppercase;
+    text-shadow: 0 10px 10px #000;
+}
+
+.step-two .result .play-again-btn {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.attribution {
+    color: hsl(0, 100%, 100%);
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(0, 100%, 100%);
+    font-weight: 700;
+}

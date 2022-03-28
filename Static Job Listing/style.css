@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+* {
+    font-family: 'Spartan', sans-serif;
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+    background-color: hsl(180, 52%, 96%);
+}
+
+.header {
+    position: relative;
+}
+
+.header img {
+    width: 100%;
+}
+
+.header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsl(180, 14%, 20%);
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+}
+
+.container {
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.featured {
+    border-left: 8px solid hsl(180, 29%, 50%);
+}
+
+.job-list-item {
+    background-color: #fff;
+    padding: 10px 15px 10px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px hsl(180, 8%, 52%);
+}
+
+.company-logo {
+    width: 10%;
+}
+
+.job-info-container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.job-info-container .company-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.job-info-container .company-info .company-name {
+    color: hsl(180, 29%, 50%);
+    font-weight: 700;
+}
+
+.job-info-container .company-info .badge {
+    padding: 8px 15px 5px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.badge-new {
+    background-color: hsl(180, 29%, 50%);
+}
+
+.badge-featured {
+    background-color: hsl(180, 14%, 20%);
+}
+
+.job-info-container .job-position {
+    color: hsl(180, 14%, 20%);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.job-info-container .job-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.job-info-container .job-info p {
+    color: hsl(180, 8%, 52%);
+}
+
+.job-info-container .job-info p:not(:last-child)::after {
+    content:"•";
+    margin-left: 20px;
+} 
+
+.job-category-container {
+    width: 45%;
+    display: flex;
+    gap: 10px;
+    flex-flow: wrap;
+}
+
+.job-category-container .category-label {
+    padding: 8px 15px 5px 15px;
+    background-color: hsl(180, 31%, 95%);
+    color: hsl(180, 29%, 50%);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
