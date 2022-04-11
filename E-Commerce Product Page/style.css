@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(25, 100%, 94%);
+    --very-dark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --transparent: transparent;
+}
+
+* {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* SITE HEADER */
+
+.site-header {
+    padding: 20px 20px 30px 20px;
+    width: 75%;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--grayish-blue);
+}
+
+.site-header .top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header .top-menu .main-menu {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.main-menu-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-menu-links a {
+    text-decoration: none;
+    color: var(--dark-grayish-blue);
+    font-weight: 700;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.user-menu .img-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+/* SITE CONTENT */
+
+.site-content {
+    width: 75%;
+    margin: 100px auto 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.product-images {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.product-images .large-product {
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.product-images .img-carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-images .img-carousel .img-thumbnail {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--transparent);
+    cursor: pointer;
+}
+
+.product-images .img-carousel .img-thumbnail.active {
+    border-color: var(--orange);
+    border-radius: 15px;
+}
+
+.product-images .img-carousel .img-thumbnail.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 10px;
+}
+
+.product-images .img-carousel .img-thumbnail img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info .product-seller {
+    color: var(--orange);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-info .product-name {
+    color: var(--very-dark-blue);
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.product-info .product-desc {
+    color: var(--grayish-blue);
+    font-weight: 700;
+    width: 500px;
+    margin-bottom: 30px;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.price-container .current-price-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.price-container .current-price-container .discounted-price {
+    margin: 0;
+}
+
+.price-container .current-price-container .discount {
+    padding: 5px 10px;
+    background-color: var(--pale-orange);
+    color: var(--orange);
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.price-container .real-price {
+    text-decoration: line-through;
+    font-weight: 700;
+    color: var(--grayish-blue);
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.input-container .input-number {
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.input-container .input-number img,
+.input-container .input-number span {
+    padding: 15px;
+}
+
+.input-container .input-number img {
+    cursor: pointer;
+}
+
+.input-container .input-number .input-counter {
+    color: var(--very-dark-blue);
+    font-weight: 700;
+}
+
+.button {
+    width: 250px;
+    padding: 15px 20px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: 700;
+    box-shadow: 0 15px 10px var(--pale-orange);
+    border-radius: 10px;
+}
+
+.button.add-to-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-dialog {
+    width: 30%;
+    margin: 50px auto;
+}
+
+.modal-content .modal-header {
+    display: flex;
+    justify-content: end;
+    padding: 20px 10px;
+}
+
+.modal-content .modal-header .close-btn {
+    cursor: pointer;
+}
+
+.modal-content .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.modal-content .large-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    position: relative;
+}
+
+.modal-content .large-image .product-image-large {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.modal-content .large-image .nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--white);
+}
+
+.modal-content .large-image .nav-button.prev {
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%);
+}
+
+.modal-content .large-image .nav-button.next {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+}
+
+.modal-content .img-carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-content .img-carousel .img-thumbnail {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--transparent);
+    cursor: pointer;
+}
+
+.modal-content .img-carousel .img-thumbnail img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.modal-content .img-carousel .img-thumbnail.active {
+    border-color: var(--orange);
+    border-radius: 15px;
+}
+
+.modal-content .img-carousel .img-thumbnail.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 10px;
+}

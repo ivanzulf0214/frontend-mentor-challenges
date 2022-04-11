@@ -14,3 +14,6 @@
 - Rock Paper Scissors
 - Static Job Listing
 - Space Tourism Website
+- Advice Generator App
+- URL Shortening
+- E-Commerce Product Page

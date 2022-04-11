@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+    --quote-size: 28px;
+}
+
+* {
+    font-family: 'Manrope', sans-serif;
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-blue);
+}
+
+.advice-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 250px;
+    padding: 30px 30px 60px 30px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: var(--dark-grayish-blue);
+}
+
+.advice-card h4 {
+    color: var(--neon-green);
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.advice-card p {
+    color: var(--light-cyan);
+    font-size: 32px;
+    margin: 0;
+}
+
+.advice-card .divider {
+    margin-top: 30px;
+}
+
+.advice-card .divider img {
+    width: 100%;
+}
+
+.advice-card .random-button {
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--neon-green);
+    background-image: url("./images/icon-dice.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+    .advice-card {
+        width: 75%;
+        height: 250px;
+    }
+
+    .advice-card h4 {
+        font-size: 14px;
+    }
+
+    .advice-card p {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .advice-card {
+        width: 75%;
+        height: 250px;
+    }
+
+    .advice-card h4 {
+        font-size: 14px;
+    }
+
+    .advice-card p {
+        font-size: 24px;
+    }
+}

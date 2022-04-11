@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+
+  <div class="site-header">
+    <div class="top-menu">
+      <div class="main-menu">
+        <img src="./images/logo.svg" alt="Logo" class="brand-logo" />
+        <div class="main-menu-links">
+          <a href="#">Collections</a>
+          <a href="#">Men</a>
+          <a href="#">Women</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="user-menu">
+        <img src="./images/icon-cart.svg" alt="Cart" class="img-cart" />
+        <img src="./images/image-avatar.png" alt="Avatar" class="img-avatar" />
+      </div>
+    </div>
+  </div>
+
+  <div class="site-content">
+    <div class="product-images">
+      <img src="./images/image-product-1.jpg" alt="Product" class="large-product" id="large_product">
+      <div class="img-carousel">
+        <div class="img-thumbnail active" data-id="1">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1">
+        </div>
+        <div class="img-thumbnail" data-id="2">
+          <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2">
+        </div>
+        <div class="img-thumbnail" data-id="3">
+          <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3">
+        </div>
+        <div class="img-thumbnail" data-id="4">
+          <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4">
+        </div>
+      </div>
+    </div>
+    <div class="product-info">
+      <h3 class="product-seller">SNEAKER COMPANY</h3>
+      <h1 class="product-name">Fall Limited Edition<br/>Sneakers</h1>
+      <p class="product-desc">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      <div class="price-container">
+        <div class="current-price-container">
+          <h2 class="discounted-price">$125.00</h2>
+          <span class="discount">50%</span>
+        </div>
+        <span class="real-price">$250.00</span>
+      </div>
+      <div class="input-container">
+        <div class="input-number">
+            <img src="./images/icon-minus.svg" alt="Minus" id="decrement_counter">
+            <span class="input-counter" id="input_counter">0</span>
+            <img src="./images/icon-plus.svg" alt="Plus" id="increment_counter">
+        </div>
+        <div class="button add-to-cart">
+          <img src="./images/icon-cart-white.svg" alt="Add to cart" class="button-img">
+          Add to cart
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="preview_modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="./images/icon-close-white.svg" alt="Close" class="close-btn" id="close_btn">
+        </div>
+        <div class="modal-body">
+          <div class="large-image">
+            <span class="nav-button prev" id="prev"><img src="./images/icon-previous.svg" alt="Previous"></span>
+            <img src="./images/image-product-1.jpg" alt="Product 1" class="product-image-large" id="product_image_large">
+            <span class="nav-button next" id="next"><img src="./images/icon-next.svg" alt="Next"></span>
+          </div>
+          <div class="img-carousel">
+            <div class="img-thumbnail active" data-id="1">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1">
+            </div>
+            <div class="img-thumbnail" data-id="2">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2">
+            </div>
+            <div class="img-thumbnail" data-id="3">
+              <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3">
+            </div>
+            <div class="img-thumbnail" data-id="4">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+
+      const images = [
+        './images/image-product-1.jpg',
+        './images/image-product-2.jpg',
+        './images/image-product-3.jpg',
+        './images/image-product-4.jpg',
+      ];
+
+      function changeLargeImage(imageIndex) {
+        $('#large_product').attr('src', images[imageIndex]);
+      }
+
+      function changeModalLargeImage(imageIndex) {
+        $('#product_image_large').attr('src', images[imageIndex]);
+      }
+
+      $('.product-images .img-carousel .img-thumbnail').on('click', function() {
+        const id = $(this).data('id');
+        $('.product-images .img-carousel .img-thumbnail').removeClass('active');
+        $(this).addClass('active');
+        changeLargeImage(id - 1);
+      });
+
+      $('.modal-content .img-carousel .img-thumbnail').on('click', function() {
+        const id = $(this).data('id');
+        $('.modal-content .img-carousel .img-thumbnail').removeClass('active');
+        $(this).addClass('active');
+        changeModalLargeImage(id - 1);
+      });
+
+      let counter = 0;
+      function updateCounter(operation) {
+        if (operation == 'decrease') {
+          if (counter > 0) {
+            counter--;
+          }
+        } else if (operation == 'increase') {
+          counter++;
+        }
+
+        $('#input_counter').text(counter);
+      }
+
+      $('#decrement_counter').on('click', function() {
+        updateCounter('decrease');
+      });
+
+      $('#increment_counter').on('click', function() {
+        updateCounter('increase');
+      });
+
+      $('#large_product').on('click', function() {
+        $('#preview_modal').addClass('show');
+      });
+
+      $('#close_btn').on('click', function() {
+        $('#preview_modal').removeClass('show');
+      });
+
+      let currentModalImagePos = 1;
+      function onNavbarButtonClick(index) {
+        $('.modal-content .img-carousel .img-thumbnail').removeClass('active');
+          $('.modal-content .img-carousel .img-thumbnail[data-id="' + currentModalImagePos + '"]').addClass('active');
+          changeModalLargeImage(currentModalImagePos - 1);
+      }
+
+      $('#prev').on('click', function() {
+        if (currentModalImagePos > 1) {
+          currentModalImagePos--;
+          onNavbarButtonClick(currentModalImagePos);
+        }
+      });
+
+      $('#next').on('click', function() {
+        if (currentModalImagePos < images.length) {
+          currentModalImagePos++;
+          onNavbarButtonClick(currentModalImagePos);
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="advice-card">
+    <h4>ADVICE <span id="advice_id"></span></h4>
+    <p id="advice_text"></p>
+    <div class="divider">
+      <img src="./images/pattern-divider-desktop.svg" alt="">
+    </div>
+    <div class="random-button"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      loadAdvice()
+      
+      $('.random-button').on('click', function() {
+        loadAdvice()
+      })
+    })
+
+    function loadAdvice() {
+      $.get("https://api.adviceslip.com/advice", function(data, status, xhr) {
+        const response = $.parseJSON(data)
+        
+        $('#advice_id').text("#" + response.slip.id)
+        $('#advice_text').text("\"" + response.slip.advice +"\"")
+      })
+    }
+  </script>
+</body>
+</html>
