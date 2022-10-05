@@ -31,11 +31,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .notification-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
+    width: 45%;
+    margin: 20px auto;
     padding: 10px 25px;
     border-radius: 8px;
     background-color: #fff;
@@ -141,7 +138,7 @@ h1, h2, h3, h4, h5, h6, p {
                         .notification-list .notification-item .notification-content .notification-title .notification-message .new-message-indicator {
                             display: inline-block;
                             margin-top: 3px;
-                            margin-left: 5px;
+                            margin-left: 3px;
                             width: 8px;
                             height: 8px;
                             border-radius: 50%;
@@ -166,3 +163,33 @@ h1, h2, h3, h4, h5, h6, p {
                     font-size: 14px;
                     color: var(--grayish-blue);
                 }
+
+@media screen and (max-width: 1024px) {
+    .notification-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .notification-container {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .notification-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .notification-container {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+        .notification-container .notification-header {
+            padding: 0 0 20px 0;
+        }
+}
